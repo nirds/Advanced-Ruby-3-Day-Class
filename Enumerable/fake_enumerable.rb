@@ -1,4 +1,4 @@
-require './fake_enumerator'
+require_relative './fake_enumerator'
 
 module FakeEnumerable
   def each

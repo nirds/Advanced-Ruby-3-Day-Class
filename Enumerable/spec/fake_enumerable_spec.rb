@@ -1,5 +1,5 @@
-require "minitest/autorun"
-require "./sorted_list"
+require 'minitest/autorun'
+require_relative '../sorted_list'
 
 describe "FakeEnumerable" do
   before do

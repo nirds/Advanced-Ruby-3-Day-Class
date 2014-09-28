@@ -1,4 +1,4 @@
-require './fake_enumerable'
+require_relative './fake_enumerable'
 
 class SortedList
   include FakeEnumerable
