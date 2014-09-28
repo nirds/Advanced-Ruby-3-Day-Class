@@ -5,7 +5,7 @@ describe "FakeEnumerable" do
   before do
     @list = SortedList.new
 
-    # will get stored interally as 3,4,7,13,42
+    # will get stored internally as 3,4,7,13,42
     @list << 3 << 13 << 42 << 4 << 7
   end
 
@@ -14,7 +14,7 @@ describe "FakeEnumerable" do
   end
 
   it "supports sort_by" do
-    # ascii sort order
+    # ASCII sort order
     @list.sort_by { |x| x.to_s }.must_equal([13, 3, 4, 42, 7])
   end
 
@@ -29,39 +29,39 @@ describe "FakeEnumerable" do
   end
 end
 
-describe "FakeEnumerator" do
-  before do
-    @list = SortedList.new
+# describe "FakeEnumerator" do
+#   before do
+#     @list = SortedList.new
 
-    @list << 3 << 13 << 42 << 4 << 7
-  end
+#     @list << 3 << 13 << 42 << 4 << 7
+#   end
 
-  it "supports next" do
-    enum = @list.each
+#   it "supports next" do
+#     enum = @list.each
 
-    enum.next.must_equal(3)
-    enum.next.must_equal(4)
-    enum.next.must_equal(7)
-    enum.next.must_equal(13)
-    enum.next.must_equal(42)
+#     enum.next.must_equal(3)
+#     enum.next.must_equal(4)
+#     enum.next.must_equal(7)
+#     enum.next.must_equal(13)
+#     enum.next.must_equal(42)
 
-    assert_raises(StopIteration) { enum.next }
-  end
+#     assert_raises(StopIteration) { enum.next }
+#   end
 
-  it "supports rewind" do
-    enum = @list.each
+#   it "supports rewind" do
+#     enum = @list.each
 
-    4.times { enum.next }
-    enum.rewind
+#     4.times { enum.next }
+#     enum.rewind
 
-    2.times { enum.next }
-    enum.next.must_equal(7)
-  end
+#     2.times { enum.next }
+#     enum.next.must_equal(7)
+#   end
 
-  it "supports with_index" do
-    enum     = @list.map
-    expected = ["0. 3", "1. 4", "2. 7", "3. 13", "4. 42"]
+#   it "supports with_index" do
+#     enum     = @list.map
+#     expected = ["0. 3", "1. 4", "2. 7", "3. 13", "4. 42"]
 
-    enum.with_index { |e,i| "#{i}. #{e}" }.must_equal(expected)
-  end
-end
+#     enum.with_index { |e,i| "#{i}. #{e}" }.must_equal(expected)
+#   end
+# end
