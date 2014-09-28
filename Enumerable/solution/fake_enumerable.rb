@@ -1,9 +1,6 @@
 module FakeEnumerable
-
-
   def map
     return self.enum_for unless block_given?
-
     [].tap { |out| each { |e| out << yield(e) } }
   end
 
