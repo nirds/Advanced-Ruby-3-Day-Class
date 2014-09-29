@@ -24,6 +24,7 @@ describe "FakeEnumerable" do
 
   it "supports reduce" do
     @list.reduce(:+).must_equal(69)
+    @list.reduce("+").must_equal(69)
     @list.reduce { |s,e| s + e }.must_equal(69)
     @list.reduce(-10) { |s,e| s + e }.must_equal(59)
     @list.reduce(-10, :+).must_equal(59)
