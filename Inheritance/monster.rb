@@ -1,8 +1,5 @@
-require_relative 'named_thing.rb'
-
 class Monster
-  include NamedThing
-  attr_accessor :vulnerabilities, :dangers
+  attr_accessor :vulnerabilities, :dangers, :name
   attr_reader :nocturnal, :legs
 
   @@monster_count = 0
@@ -12,7 +9,7 @@ class Monster
   end
 
   def initialize noc, legs, name="Monster", vul = [], dangers = []
-    super name
+    @name = name
     @nocturnal = noc
     @vlunerabilities = vul
     @dangers = dangers
@@ -24,6 +21,14 @@ public
 
   def attack human
     puts "#{name} #{dangers.sample} #{human.name}!!"
+  end
+
+  def say_name
+    "My name is #{@name}"
+  end
+
+  def shout_name
+    @name.upcase
   end
 
 protected
