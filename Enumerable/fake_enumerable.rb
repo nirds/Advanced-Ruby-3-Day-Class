@@ -1,12 +1,4 @@
 module FakeEnumerable
-  def each
-    if block_given?
-      @data.each { |e| yield(e) }
-    else
-      FakeEnumerator.new(self, :each)
-    end
-  end
-
   def map
   end
 
