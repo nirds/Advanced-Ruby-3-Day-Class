@@ -26,6 +26,9 @@ describe "FakeEnumerable" do
     @list.reduce(:+).must_equal(69)
     @list.reduce { |s,e| s + e }.must_equal(69)
     @list.reduce(-10) { |s,e| s + e }.must_equal(59)
+    @list.reduce(-10, :+).must_equal(59)
+    enum = @list.reduce
+    enum.next.must_equal(3)
   end
 end
 
@@ -56,12 +59,5 @@ describe "FakeEnumerator" do
 
     2.times { enum.next }
     enum.next.must_equal(7)
-  end
-
-  it "supports with_index" do
-    enum     = @list.map
-    expected = ["0. 3", "1. 4", "2. 7", "3. 13", "4. 42"]
-
-    enum.with_index { |e,i| "#{i}. #{e}" }.must_equal(expected)
   end
 end
