@@ -28,11 +28,7 @@ module FakeEnumerable
     end
 
     each do |a|
-      if accumulator.nil?
-        accumulator = a
-      else
-        accumulator = yield(accumulator, a)
-      end
+      accumulator = accumulator.nil? ? a : yield(accumulator, a)
     end
 
     accumulator
