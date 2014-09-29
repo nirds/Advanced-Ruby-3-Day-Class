@@ -26,5 +26,12 @@ describe "FakeEnumerable" do
     @list.reduce(:+).must_equal(69)
     @list.reduce { |s,e| s + e }.must_equal(69)
     @list.reduce(-10) { |s,e| s + e }.must_equal(59)
+    @list.reduce(-10, :+).must_equal(59)
+    
+    enum = @list.reduce
+    enum.next.must_equal(3)
+    
+    @list.reduce(:numbers){|s,e| s.to_s + e.to_s }.must_equal("numbers3471342")
+    @list.reduce("numbers"){|s,e| s + e.to_s }.must_equal("numbers3471342")
   end
 end
