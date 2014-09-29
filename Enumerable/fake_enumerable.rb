@@ -1,5 +1,3 @@
-require './fake_enumerator'
-
 module FakeEnumerable
   def each
     if block_given?
