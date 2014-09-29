@@ -9,11 +9,12 @@ class Monster
   end
 
   def initialize noc, legs, name="Monster", vul = [], dangers = []
-    @name = name
-    @nocturnal = noc
+    @name            = name
+    @nocturnal       = noc
     @vlunerabilities = vul
-    @dangers = dangers
-    @legs = legs
+    @dangers         = dangers
+    @legs            = legs
+
     @@monster_count += 1
   end
 
