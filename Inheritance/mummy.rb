@@ -5,7 +5,8 @@ class Mummy < Monster
     options[:nocturnal] = true if options[:nocturnal].nil?
     options[:legs] ||= 2
 
-    super options[:nocturnal], options[:legs], options[:name], options[:vulnerabilities], options[:dangers]
+    super options[:nocturnal], options[:legs], options[:name],
+          options[:vulnerabilities], options[:dangers]
   end
 
   def test_whisper mummy

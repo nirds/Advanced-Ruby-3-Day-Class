@@ -5,7 +5,8 @@ class Vampire < Monster
 
   def initialize coffin_location, noc=true, legs=2, name ="Vampire", vul=[:garlic, :sunlight], dangers=[:bites]
     @coffin_location = coffin_location
-    @am_i_human = true
+    @am_i_human      = true
+
     super noc, legs, name, vul, dangers
   end
 
