@@ -14,7 +14,7 @@ describe "Invoice" do
   end
 
   it "returns the state_tax_rate" do
-    @invoice.state_tax_rate("Deleware").must_equal 0.05
+    @invoice.state_tax_rate("Delaware").must_equal 0.05
   end
 
   it "calculates the tax_rate" do
