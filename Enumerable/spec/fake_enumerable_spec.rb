@@ -39,5 +39,10 @@ describe "FakeEnumerable" do
     @list.reduce(-10, :+).must_equal(59)
     @list.reduce(:numbers){|s,e| s.to_s + e.to_s }.must_equal("numbers3471342")
     @list.reduce("numbers"){|s,e| s + e.to_s }.must_equal("numbers3471342")
+    @list.reduce { |a, e| e }.must_equal(42)
+
+    nil_list = SortedList.new << nil << nil
+    nil_list.reduce { |a, e| a.inspect + e.inspect }.must_equal('nilnil')
+    nil_list.reduce(nil) { |a, e| a.inspect + e.inspect }.must_equal('"nilnil"nil')
   end
 end
