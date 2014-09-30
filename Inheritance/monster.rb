@@ -4,16 +4,21 @@ class Monster
 
   @@monster_count = 0
 
+  def self.inherited klass
+    puts "#{klass} is a new type of Monster - oh noes!"
+  end
+
   def self.count
     @@monster_count
   end
 
   def initialize noc, legs, name="Monster", vul = [], dangers = []
-    @name = name
-    @nocturnal = noc
+    @name            = name
+    @nocturnal       = noc
     @vlunerabilities = vul
-    @dangers = dangers
-    @legs = legs
+    @dangers         = dangers
+    @legs            = legs
+
     @@monster_count += 1
   end
 
