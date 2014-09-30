@@ -14,4 +14,8 @@ class Snitch
   def self.inherited(subclass)
     puts "Someone created a subclass of me: #{subclass}"
   end
+
+  def self.const_missing(constant)
+    puts "Someone tried to access a constant I don't have: #{constant}"
+  end
 end
