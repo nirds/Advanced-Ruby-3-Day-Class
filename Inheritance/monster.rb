@@ -8,6 +8,10 @@ class Monster
     puts "#{klass} is a new type of Monster - oh noes!"
   end
 
+  def self.types
+    # return a list of all types on Monsters
+  end
+
   def self.count
     @@monster_count
   end
