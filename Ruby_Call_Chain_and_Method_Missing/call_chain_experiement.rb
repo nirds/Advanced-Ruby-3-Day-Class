@@ -49,9 +49,9 @@ module Speaker
     "#{self}.#{super}"
   end
 
-  def call_chain
-    "Speaker.#{super}"
-  end
+  # def call_chain
+  #   "Speaker.#{super}"
+  # end
 end
 
 class Person < Animal
@@ -70,6 +70,19 @@ end
 class Renee < Person
   def what_is_self
     "#{self}.#{super}"
+  end
+
+  def name_is_renee
+    true
+  end
+
+  def is_happy?
+    true
+  end
+
+  def method_missing m, *args, &block
+    puts "happy has moved to is_happy?" if m == :happy
+    super
   end
 
   def call_chain
