@@ -1,32 +1,13 @@
 require_relative 'monster'
 
-module Kernel
-  def class_attr_accessor *args
-    args.each do |m|
-      meta_class.instance_eval do
-        define_method m do
-          class_variable_get("@@#{m}")
-        end
-        define_method "#{m}=" do |a|
-          class_variable_set("@@#{m}", a)
-        end
-      end
-    end
-  end
 
-  def meta_class
-    class << self
-      self
-    end
-  end
-end
+require_relative 'kernel'
 require 'forwardable'
 
 class Zombie < Monster
   class_attr_accessor :thing
 
   @@thing = 0
-
 
   extend Forwardable
   def_delegators "FastZombie", :fast_zombie_count
