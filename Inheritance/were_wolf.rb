@@ -17,6 +17,9 @@ class WereWolf < Monster
 
   def convert! human
     bite human
+    human.instance_eval do
+      extend BitingThing
+    end
     @humans_converted << human
     @@humans_converted << human
   end
