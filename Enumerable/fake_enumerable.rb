@@ -1,5 +1,4 @@
 module FakeEnumerable
-
   def map
     return each unless block_given?
     matched = []

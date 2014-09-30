@@ -14,8 +14,8 @@ class SortedList
     self
   end
 
-  def each &block
+  def each
     return self.to_enum unless block_given?
-    @data.each { |i| block.call i }
+    @data.each { |i| yield i }
   end
 end
