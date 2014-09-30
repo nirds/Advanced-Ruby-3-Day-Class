@@ -4,6 +4,10 @@ class Monster
 
   @@monster_count = 0
 
+  def self.inherited klass
+    puts "#{klass} is a new type of Monster - oh noes!"
+  end
+
   def self.count
     @@monster_count
   end
