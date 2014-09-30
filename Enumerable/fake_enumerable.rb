@@ -1,28 +1,17 @@
 module FakeEnumerable
   def map
     return each unless block_given?
-    matched = []
-    each do |i|
-      matched << yield(i)
-    end
-    matched
+    each.inject([]){|m,i| m << yield(i); m}
   end
 
   def select
     return each unless block_given?
-    matched = []
-    each do |i|
-      matched << i if yield(i)
-    end
-    matched
+    each.inject([]){|m,i| m << i if yield(i); m}
   end
 
   def sort_by
     return each unless block_given?
-    sorted = {}
-    each do |i|
-      sorted[i] = yield(i)
-    end
+    sorted = each.inject({}){|m,i| m[i] = yield(i); m}
     sorted.sort_by{|k,v| v}.map{|a| a.first}
   end
 
