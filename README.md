@@ -2,6 +2,11 @@ DSL Example:
 https://github.com/ultrasaurus/pie
 http://www.slideshare.net/sarah.allen/the-making-of-pie
 
+Katas:
+http://katas.softwarecraftsmanship.org/
+http://codekata.com/kata/kata06-anagrams/
+https://projecteuler.net/problem=1
+
 ### Ruby_Call_Chain_and_Method_Missing
 - from instance all the way up to BasicObject
 - The changing face of `self`
