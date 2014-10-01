@@ -20,6 +20,10 @@ class Monster
     @@types << klass
   end
 
+  def self.types
+    # return a list of all types on Monsters
+  end
+
   def self.count
     @@monster_count
   end
@@ -27,7 +31,7 @@ class Monster
   def initialize noc, legs, name="Monster", vul = [], dangers = []
     @name            = name
     @nocturnal       = noc
-    @vlunerabilities = vul
+    @vulnerabilities = vul
     @dangers         = dangers
     @legs            = legs
 
