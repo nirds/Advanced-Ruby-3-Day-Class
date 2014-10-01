@@ -1,26 +1,32 @@
+puts __FILE__
+
+puts "In a ruby file"
+
+HELLO_WORLD = "hello world"
+
 class Couch
+  attr_accessor :pillows, :cushions, :dogs
+
+  def pillows
+    @pillows
+  end
+
+  def pillows= pillows
+    @pillows = pillows
+  end
+
   def initialize pillows, cushions, dogs
     @pillows = pillows
     @cushions = cushions
     @dogs = dogs
   end
 
-  # [:pillows, :cushions, :dogs].each do |s|
-  #   define_method("how_many_#{s}?") do
-  #     instance_variable_get("@#{s}").count
-  #   end
-  # end
+  puts "Defining Couch!"
 
-  def how_many_pillows?
-    @pillows.count
-  end
-
-  def how_many_cushions?
-    @cushions.count
-  end
-
-  def how_many_dogs?
-    @dogs.count
+  [:pillows, :cushions, :dogs].each do |s|
+    define_method("how_many_#{s}?") do
+      instance_variable_get("@#{s}").count
+    end
   end
 
   def respond_to? method_name
@@ -48,3 +54,7 @@ class Couch
   end
 
 end
+
+
+$renees_couch = Couch.new [:red, :red, :black, :black], [:grey, :grey], ['Bradley', 'Sticks']
+puts $renees_couch.how_many_dogs?

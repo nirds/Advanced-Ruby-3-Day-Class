@@ -5,6 +5,11 @@ class Monster
   attr_accessor :vulnerabilities, :dangers, :name
   attr_reader :nocturnal, :legs
 
+  def self.new *args
+    raise "You must pass (2..5 arguments to initialize)" unless args.length > 1
+    super
+  end
+
   @@monster_count = 0
   @@type_count = 0
   @@types = []
