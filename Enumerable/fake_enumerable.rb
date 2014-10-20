@@ -8,6 +8,6 @@ module FakeEnumerable
   def sort_by
   end
 
-  def reduce(*args)
+  def reduce *args
   end
 end
