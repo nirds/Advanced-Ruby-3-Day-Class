@@ -11,7 +11,7 @@ describe Timer do
     allow(Time).to receive(:now).and_return(0,1)
     start = Time.now
     Timer.time_code { }
-    expect(Time.now - start).to be_within(0.01).of(1)
+    expect(Time.now - start).to eq(1)
   end
 
   it 'runs our code multiple times' do
@@ -23,6 +23,6 @@ describe Timer do
 
   it 'averages runtime correctly' do
     allow(Time).to receive(:now).and_return(*(0..5))
-    expect(Timer.time_code(3) { }).to be_within(0.1).of(1)
+    expect(Timer.time_code(3) { }).to eq(1)
   end
 end
