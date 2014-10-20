@@ -1,5 +1,4 @@
-require 'rspec'
-require_relative('even_number')
+require_relative 'even_number'
 
 describe EvenNumber do
 
