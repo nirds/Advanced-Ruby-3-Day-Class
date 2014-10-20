@@ -1,4 +1,8 @@
+require_relative 'not_set'
+
 module FakeEnumerable
+  using NotSetBehavior
+
   def map
     return each unless block_given?
     each.inject([]){|m,i| m << yield(i); m}
@@ -17,17 +21,20 @@ module FakeEnumerable
 
   def reduce *args, &block
     enum = each
-    return looper args.first, enum, args.last if args.length == 2
-    return looper args.first, enum, block if block_given?
-    return looper nil, enum, args.last unless args.empty?
+    start_arg = NotSet.instance
+    return looper args.first, enum, args.last if args.size == 2
+    start_arg = args.first if args.size == 1
+    return looper start_arg, enum, block if block_given?
+    return looper enum, args.last unless args.empty?
     enum
   end
   alias_method :inject, :reduce
 
 private
-  def looper value, enum, method
+
+  def looper value = NotSet.instance, enum, method
     loop do
-      value ||= enum.next
+      value = enum.next if value.not_set?
       item = enum.next
       if method.respond_to? :call
         value = method.call value, item
