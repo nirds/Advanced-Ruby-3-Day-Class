@@ -1,5 +1,6 @@
 class EvenNumber
-  attr_accessor :value
+  include Comparable
+  attr_reader :value
 
   def initialize(input)
     @value = input
@@ -9,11 +10,11 @@ class EvenNumber
     EvenNumber.new(@value + 2)
   end
 
-  def ==(other)
-    @value == other.value
-  end
-
   def <=>(other)
     @value <=> other.value
+  end
+
+  def to_s
+    @value.to_s
   end
 end
