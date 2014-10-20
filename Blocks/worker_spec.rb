@@ -1,4 +1,5 @@
 require "#{File.dirname(__FILE__)}/worker"
+require_relative '../spec_helper'
 
 describe Worker do
 
