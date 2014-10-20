@@ -30,6 +30,13 @@ describe '#translate' do
     end
   end
 
+  context 'when there are no vowels' do
+    it 'turns "hmmm" into "hmmmay"' do
+      expect(translate('hmmm')).to eq('hmmmay')
+    end
+
+  end
+
   context 'when the word starts with "qu", treat the "u" as a consonant' do
     it 'turns "quick" into "ickquay"' do
       expect(translate('quick')).to eq('ickquay')

@@ -14,7 +14,8 @@ module PigLatinTranslator
     capitalized = input[0] == input[0].upcase
 
     first_vowel = input.index(VOWELS)
-    if first_vowel == 0
+
+    if first_vowel.nil? || first_vowel == 0
       return "#{input}ay"
     end
 
