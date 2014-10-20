@@ -1,5 +1,11 @@
 require 'date'
 module HelpfulTime
+
+  def test
+    puts "hi"
+  end
+
+
   refine Time do
     def before? other_time
      self < other_time
@@ -53,8 +59,10 @@ module HelpfulTime
   end
 end
 
-module AgeCalculator
+class AgeCalculator
+  include HelpfulTime
   using HelpfulTime
+  extend HelpfulTime
 
   def self.how_old_am_i? birthday
     old = Date.parse('01/01/1980')

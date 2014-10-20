@@ -1,11 +1,14 @@
 require 'stackprof'
-require_relative '../Inheritance/monster'
+
+class Foo
+  def self.method_missing(method)
+    self.send(:define_method, method) { 1 + 1 }
+  end
+end
 
 StackProf.run(mode: :cpu, out: 'stackprof-cpu-myapp.dump') do
-  10_000_000.times do
-    m = Monster.new(true, 2, "fake monster", [], [])
-    foo = "bar" + m.say_name
-    bar = "foo" + m.say_name
+  1_000_000.times do
+    Foo.foo
   end
 end
 

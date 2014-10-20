@@ -1,3 +1,12 @@
+DSL Example:
+https://github.com/ultrasaurus/pie
+http://www.slideshare.net/sarah.allen/the-making-of-pie
+
+Katas:
+http://katas.softwarecraftsmanship.org/
+http://codekata.com/kata/kata06-anagrams/
+https://projecteuler.net/problem=1
+
 ### Ruby_Call_Chain_and_Method_Missing
 - from instance all the way up to BasicObject
 - The changing face of `self`
@@ -42,8 +51,8 @@ Blocks, Closures, Lambdas, Procs
   - methods_added
   - methods_removed
   - methods_undefined
-- Decoupling code using inherited to keep track of subclasses 
-- Using `method_missing` to create magic methods 
+- Decoupling code using inherited to keep track of subclasses
+- Using `method_missing` to create magic methods
 - Applying `const_missing` in both global and localized situations
 - Common mistakes to avoid when metaprogramming (best practices)
 
