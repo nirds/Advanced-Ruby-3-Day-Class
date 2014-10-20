@@ -16,7 +16,23 @@ describe EvenNumber do
   end
 
   it 'gives us a range of EvenNumbers' do
-    odd_numbers = EvenNumber.new(2)..EvenNumber.new(10)
-    expect(odd_numbers).to be_kind_of(Range)
+    even_numbers = EvenNumber.new(2)..EvenNumber.new(6)
+    expect(even_numbers).to be_kind_of(Range)
+  end
+
+  it 'gives us the right values for our EvenNumber range' do
+    even_numbers = EvenNumber.new(2)..EvenNumber.new(6)
+
+    expect(even_numbers.to_a).to eq([EvenNumber.new(2), EvenNumber.new(4), EvenNumber.new(6)])
+  end
+
+  context 'when initialized with something other than an even number' do
+    it 'raises a TypeError when initialized with an odd number' do
+      expect{EvenNumber.new(3)}.to raise_error(TypeError)
+    end
+
+    it 'raises a TypeError when initialized with a string' do
+      expect{EvenNumber.new('panda')}.to raise_error(TypeError)
+    end
   end
 end

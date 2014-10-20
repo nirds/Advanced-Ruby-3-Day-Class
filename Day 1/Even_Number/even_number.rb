@@ -3,6 +3,10 @@ class EvenNumber
   attr_reader :value
 
   def initialize(input)
+    unless input.is_a?(Integer) && input.even?
+      raise TypeError
+    end
+
     @value = input
   end
 
