@@ -6,7 +6,7 @@ class Monster
   attr_reader :nocturnal, :legs
 
   def self.new *args
-    raise "You must pass (2..5 arguments to initialize)" unless args.length > 1
+    #raise "You must pass (2..5 arguments to initialize)" unless args.length > 1
     super
   end
 

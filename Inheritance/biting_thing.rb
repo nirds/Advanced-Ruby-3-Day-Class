@@ -1,5 +1,5 @@
 module BitingThing
-  def self.bites?
+  def bites?
     puts "I bite things"
   end
   def bite something
