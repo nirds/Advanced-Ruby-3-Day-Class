@@ -1,9 +1,10 @@
 require_relative 'monster.rb'
 
 class Vampire < Monster
+  DEFAULT_VUL = [:garlic, :sunlight]
   attr_reader :coffin_location
 
-  def initialize coffin_location, noc=true, legs=2, name ="Vampire", vul=[:garlic, :sunlight], dangers=[:bites]
+  def initialize coffin_location, noc=true, legs=2, name ="Vampire", vul=DEFAULT_VUL, dangers=[:bites]
     @coffin_location = coffin_location
     @am_i_human      = true
 
@@ -20,6 +21,11 @@ class Vampire < Monster
 
   def is_human?
     @am_i_human
+  end
+
+  def make_them_whisper other_monster
+    puts "#{self.kind_of? Monster}"
+    other_monster.whisper_creepily
   end
 
   def turn_you_into_bat other_vamp
