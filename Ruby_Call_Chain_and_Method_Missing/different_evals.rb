@@ -5,6 +5,17 @@ String.instance_eval do
   end
 end
 
+class String
+  def self.is_happy?
+  end
+  class << self
+    def is_happy?
+      puts self.inspect
+      self == "happy"
+    end
+  end
+end
+
 puts "======================="
 puts String.is_happy?
 puts "======================="

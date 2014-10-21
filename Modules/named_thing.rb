@@ -1,15 +1,14 @@
 module NamedThing
-  attr_accessor :name
 
-  def initialize name
-    @name = name
+  def self.included klass
+    puts "WAIT! STOP!" unless klass.instance_methods.include? :name
   end
 
   def say_name
-    "My name is #{@name}"
+    "My name is #{name}"
   end
 
   def shout_name
-    @name.upcase
+    name.upcase
   end
 end

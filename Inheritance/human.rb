@@ -1,15 +1,5 @@
+require_relative 'named_thing.rb'
+
 class Human
-  attr_accessor :name
-
-  def initialize name
-    @name = name
-  end
-
-  def say_name
-    "My name is #{@name}"
-  end
-
-  def shout_name
-    @name.upcase
-  end
+  include NamedThing
 end
