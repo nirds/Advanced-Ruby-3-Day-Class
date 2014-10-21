@@ -32,6 +32,13 @@ class Animal
   def call_chain
     "Animal.#{super}"
   end
+
+  def method_missing m, *args, &block
+    puts "Hello from Animal"
+    puts "you called #{m} with #{args}"
+    puts "Maybe you meant: #{self.methods.select{|meth| meth.to_s.include? m.to_s }}"
+    super
+  end
 end
 
 module NamedThing
@@ -55,8 +62,8 @@ module Speaker
 end
 
 class Person < Animal
-  include NamedThing
   include Speaker
+  prepend NamedThing
 
   def what_is_self
     "#{self}.#{super}"
@@ -64,6 +71,12 @@ class Person < Animal
 
   def call_chain
     "Person.#{super}"
+  end
+
+  def method_missing m, *args, &block
+    puts "Hello from Person"
+    puts "you called #{m} with #{args}"
+    super
   end
 end
 
