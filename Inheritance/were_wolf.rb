@@ -6,6 +6,10 @@ class WereWolf < Monster
 
   @@humans_converted = Set.new
 
+  def self.humans_converted
+    @@humans_converted.map(&:name)
+  end
+
   def initialize nocturnal: false, name: "WereWolf", legs: 4, dangers: [:bites], vulnerabilities: [:silver_bullets], humans_converted: []
     super nocturnal, legs,name, vulnerabilities, dangers
     @humans_converted = humans_converted
