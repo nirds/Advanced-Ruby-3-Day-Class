@@ -15,6 +15,10 @@ class Vampire < Monster
     puts "Yummm!"
   end
 
+  def bite human
+    puts "#{human.name} was tasty!"
+  end
+
   def is_bat?
     !is_human?
   end

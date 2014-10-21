@@ -37,6 +37,10 @@ class Animal
     puts "Hello from Animal"
     puts "you called #{m} with #{args}"
     puts "Maybe you meant: #{self.methods.select{|meth| meth.to_s.include? m.to_s }}"
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     super
   end
 end
