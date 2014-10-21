@@ -1,6 +1,8 @@
 require 'set'
+require_relative 'named_thing'
 
 class Monster
+  include NamedThing
   attr_accessor :vulnerabilities, :dangers, :name
   attr_reader :nocturnal, :legs
 
@@ -40,14 +42,6 @@ public
 
   def attack human
     puts "#{name} #{dangers.sample} #{human.name}!!"
-  end
-
-  def say_name
-    "My name is #{@name}"
-  end
-
-  def shout_name
-    @name.upcase
   end
 
 protected
