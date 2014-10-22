@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class String
   def something
   end
@@ -13,11 +14,17 @@ end
 
 
 
+=======
+>>>>>>> master
 module ClassAttrs
   refine Class do
     def class_attr_accessor *args
       args.each do |m|
+<<<<<<< HEAD
         singleton_class.instance_eval do
+=======
+        meta_class.instance_eval do
+>>>>>>> master
           define_method m do
             class_variable_get("@@#{m}")
           end
@@ -27,5 +34,14 @@ module ClassAttrs
         end
       end
     end
+<<<<<<< HEAD
+=======
+
+    def meta_class
+      class << self
+        self
+      end
+    end
+>>>>>>> master
   end
 end

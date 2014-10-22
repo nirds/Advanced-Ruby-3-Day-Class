@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 require 'simplecov'
 SimpleCov.start
 
+=======
+>>>>>>> master
 require_relative '../spec_helper'
 require_relative 'game'
 
