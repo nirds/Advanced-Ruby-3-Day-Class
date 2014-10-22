@@ -1,0 +1,80 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/renee/Advanced-Ruby-3-Day-Class/Day3_Materials/game.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/renee/Advanced-Ruby-3-Day-Class/Day3_Materials/game_loader.rb": [
+        1,
+        1,
+        1,
+        4,
+        null
+      ],
+      "/Users/renee/Advanced-Ruby-3-Day-Class/Day3_Materials/game_helpers/path_helper.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/renee/Advanced-Ruby-3-Day-Class/Day3_Materials/game_helpers/path.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/renee/Advanced-Ruby-3-Day-Class/Day3_Materials/game_helpers/location_helper.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/renee/Advanced-Ruby-3-Day-Class/Day3_Materials/game_helpers/location.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1413990274
+  }
+}
